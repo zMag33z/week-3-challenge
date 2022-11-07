@@ -1,62 +1,66 @@
-// Assignment Code
+// Attaching event listener to the html document with id generate.
 var generateBtn = document.querySelector("#generate");
-  console.log("Yay! You clicked the button! \n Now choose your password criteria.");
-var PasswordLength = [];
-var PasswordLower = [];
-var PasswordUpper = [];
-var PasswordSCharacter = [];
+console.log("Click the RED Button.");
 
+// First Prompt Length  
+var PasswordLength = 8;
+// Next Prompts Selectors 'yes' or 'no'.
+var PasswordLower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var PasswordUpper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var PasswordNumbers = ["0","1","2","3","4","5","6","7","8","9"];
+var PasswordSCharacter = ["!","@","#","$","%","^","&","*","(",")","[","]","{","}","=","<",">","/","?","."];
+var PasswordSelectors = [];
+
+
+// Here the prompts start.
 function PasswordPrompts() {
+  console.log("Choose your password criteria.");
+
+  PasswordSelectors = [];  //refreshes function.
+
     PasswordLength = parseInt(prompt("Password Length? (8-128)"));
   if(isNaN(PasswordLength) || PasswordLength < 8 || PasswordLength > 128) {
     alert ("Length must be a number, 8 - 128.  Try again.");
     return false;
-  }else{
-    confirm("Lowercase letters (abc) to your password?");
+  } else if (confirm("Lowercase letters (abc) in your password?")) {
+    PasswordSelectors = PasswordSelectors.concat(PasswordLower);
   }
-  if (confirm("Uppercase letters (ABC) to your password?")) {
-
+  if (confirm("Uppercase letters (ABC) in your password?")) {
+    PasswordSelectors = PasswordSelectors.concat(PasswordUpper);
   }
+  if (confirm("Numbers (123) in your password?")) {
+    PasswordSelectors = PasswordSelectors.concat(PasswordNumbers);
+  }
+  if (confirm("Special Characaters (!@#) in your password?")) {
+    PasswordSelectors = PasswordSelectors.concat(PasswordSCharacter);
+  }
+  return true;
 }
 
-
+// After prompts then generates password.
 function generatePassword() {
-// console.log("Yay! You clicked the button!");
-//prompt user for criteria
-///length 8-120
+  console.log("Generating Password.");
 
-// Generate random 'Lower, Upper, Number, Special Characeter'  Used charset from browsers character selector by number.
-//function getRandomLower() {
-//  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-//}
-//function getRandomUpper() {
-//  return string.fromCharCode(Math.floor(Math.random() * 26) + 65);
-//}
-//function getRandomNumber() {
-//  return string.fromCharCode(Math.floor(Math.random() * 48) + 10);
-//}
-//function getRandomSCharacter() {
-//  const sChar = '!@#$%^&*()[]{}=<>/,.';
-//  return sChar [Math.floor(Math.random() * sChar.length)];
+  var generated = "";
+  for(var i = 0; i < PasswordLength; i++) {
+    var mixAllIndex = Math.floor(Math.random() * PasswordSelectors.length);
+    generated = generated + PasswordSelectors[mixAllIndex];
+  }
+  return generated;
 }
 
-//validate the input
+// After click tells document to write the Password.
+generateBtn.addEventListener("click", writePassword);
 
-//generate password
-
-//This will display password to page.
-//  return;
-//}
-
-// Write password to the #password input
+// Writes 'the generated password' to the html document textarea id password.
 function writePassword() {
+  var PromptsAnswered = PasswordPrompts();
+
+  if(PromptsAnswered) {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+  }
+  console.log("Here is your new Password.");
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-console.log("Yay! You chose criteria for your new password! \n Here's your new password.");
