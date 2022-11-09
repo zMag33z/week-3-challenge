@@ -19,15 +19,15 @@ N/A
 
 Allows one to create a password base on criteria through a prompt system.  If prompts are not answered properly an alert will be shown.  You may also open the console and follow each prompt to the end.
 
-![Password Generator](https://zmag33z.github.io/week-3-challenge/assets/images/PasswordGenerator.png)
+![Password Generator](./assets/images/PasswordGenerator.png)
 
-![Beginning of Prompt](https://zmag33z.github.io/week-3-challenge/assets/images/firstprompt.png)
+![Beginning of Prompt](./assets/images/firstprompt.png)
 
-![Invalid prompt 1](https://zmag33z.github.io/week-3-challenge/assets/images/badprompt1.png)
+![Invalid prompt 1](./assets/images/badprompt1.png)
 
-![Invalid prompt 2](https://zmag33z.github.io/week-3-challenge/assets/images/badprompt2.png)
+![Invalid prompt 2](./assets/images/badprompt2.png)
 
-![Follow the Console Log.](https://zmag33z.github.io/week-3-challenge/assets/images/console.png)
+![Follow the Console Log.](./assets/images/console.png)
 
 ## Credits
 
