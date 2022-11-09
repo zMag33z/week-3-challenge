@@ -1,4 +1,9 @@
-$settings['block_interest_cohort'] = FALSE;
+// Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
+// Not a user created error.
+// This error comes up if you refresh the page.  Done some reading on it.  Little confusing.  Tried three fixes with no luck.
+// Found this website that has some code worked for it but I'm assuming it would be a totally seperate js file.
+// https://drag13.io/posts/how-turn-off-floc-javascript/index.html.
+// Unknowing where to go I am leaving it as is.
 
 // Attaches a clickable area on the html document with id generate.
 var generateBtn = document.querySelector("#generate");
