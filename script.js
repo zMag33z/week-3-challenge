@@ -1,3 +1,5 @@
+$settings['block_interest_cohort'] = FALSE;
+
 // Attaches a clickable area on the html document with id generate.
 var generateBtn = document.querySelector("#generate");
 console.log("Click the RED Button.");
