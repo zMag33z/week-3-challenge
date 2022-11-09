@@ -33,7 +33,9 @@ Allows one to create a password base on criteria through a prompt system.  If pr
 
 [Daniel Vega](https://www.youtube.com/watch?v=v2jfGo7ztm8)
 
-### [Password Generator](https://zmag33z.github.io/week-3-challenge/)
+## This site.
+
+[Password Generator](https://zmag33z.github.io/week-3-challenge/)
 
 ## License
 
