@@ -1,8 +1,7 @@
 // Attaches a clickable area on the html document with id generate.
 var generateBtn = document.querySelector("#generate");
 console.log("Click the RED Button.");
-
-// First Prompt Length  
+// First Prompt Length.
 var PasswordLength = 8;
 // Next Prompts Selectors 'ok or cancel'.
 var PasswordLower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -11,31 +10,47 @@ var PasswordNumbers = ["0","1","2","3","4","5","6","7","8","9"];
 var PasswordSCharacter = ["!","@","#","$","%","^","&","*","(",")","[","]","{","}","=","<",">","/","?","."];
 var PasswordSelectors = [];
 
-
-// 4. Here the Prompt start.
+// 4. Here the Prompt starts.
 function PasswordPrompts() {
   console.log("Choose your password criteria.");
-
   PasswordSelectors = [];  //refreshes function.
-
     PasswordLength = parseInt(prompt("Password Length? (8-128)"));
   if(isNaN(PasswordLength) || PasswordLength < 8 || PasswordLength > 128) {
     alert ("Length must be a number 8 - 128.  Try again.");
     console.log("You must choose a number. \n Click the RED Button.")
     return false;
-  } else if (confirm("Lowercase letters (abc) in your password?")) {
+  }
+  if (confirm("Lowercase letters (abc) in your password.")) {
     PasswordSelectors = PasswordSelectors.concat(PasswordLower);
+    console.log("You chose Lowercase letters.");
+  } else {
+    console.log("You did not choose Lowercase letters.");
   }
-  if (confirm("Uppercase letters (ABC) in your password?")) {
+  if (confirm("Uppercase letters (ABC) in your password.")) {
     PasswordSelectors = PasswordSelectors.concat(PasswordUpper);
+    console.log("You chose Uppercase letters.");
+  } else {
+    console.log("You did not choose Uppercase letters.");
   }
-  if (confirm("Numbers (123) in your password?")) {
+  if (confirm("Numbers (123) in your password.")) {
     PasswordSelectors = PasswordSelectors.concat(PasswordNumbers);
+    console.log("You chose Numbers.");
+  } else {
+    console.log("You did not choose Numbers.");
   }
-  if (confirm("Special Characaters (!@#) in your password?")) {
+  if (confirm("Special Characaters (!@#) in your password.")) {
     PasswordSelectors = PasswordSelectors.concat(PasswordSCharacter);
+    console.log("You chose Special Characters.");
+  } else {
+    console.log("You did not choose Special Characters.");
   }
-  return true;
+  if (PasswordSelectors == 0) {
+    alert("You must choose at least one Character Type.  Try again.");
+    console.log("You must choose at least one Character Type.\n Click the RED Button.");
+    return false;
+  } else {
+    return true;
+  }
 }
 
 // 6. Created the actual function for generatePassword() in writePassword().
@@ -58,14 +73,10 @@ function writePassword() {
 // 5. Only if PasswordPrompts(true) can writePassword() proceed.
   if(PasswordPrompts(true)) {
     var password = generatePassword();
-
 // 7. Password turned into text value to be placed into class password of html document.
      var passwordText = document.querySelector("#password");
     passwordText.value = password;
+    console.log("Here's your new Password.  Use it wisely.");
   }
-  if(generatePassword(null)) {
-    alert("You did not choose any characters. (abcABC123!@#)\n Click the RED Button.");
-  passwordText.value = "";
-  console.log("You didn't choose any characters.");
-  }
+
 }
