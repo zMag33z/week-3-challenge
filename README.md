@@ -1,24 +1,40 @@
-# week-3-challenge
+# Password Generator
 
-GIVEN I need a new, secure password
+## Description
 
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
+Click the RED generate password Button to generate a RANDOM password.
 
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
+## Table of contents
 
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
+## Installation
 
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
+N/A
 
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
+## Usage
 
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
+Allows one to create a password base on criteria through a prompt system.  If prompts are not answered properly an alert will be shown.  You may also open the console and follow each prompt to the end.
+
+![Password Generator](https://zmag33z.github.io/week-3-challenge/assets/images/PasswordGenerator.png)
+
+![Beginning of Prompt](https://zmag33z.github.io/week-3-challenge/assets/images/firstprompt.png)
+
+![Invalid prompt 1](https://zmag33z.github.io/week-3-challenge/assets/images/badprompt1.png)
+
+![Invalid prompt 2](https://zmag33z.github.io/week-3-challenge/assets/images/badprompt2.png)
+
+![Follow the Console Log.](https://zmag33z.github.io/week-3-challenge/assets/images/console.png)
+
+## Credits
+
+[Daniel Vega](https://www.youtube.com/watch?v=v2jfGo7ztm8)
+
+### [Password Generator](https://zmag33z.github.io/week-3-challenge/)
+
+## License
+
+### [MIT License Copyright (c) 2022](https://zmag33z.github.io/week-3-challenge/license.md)
